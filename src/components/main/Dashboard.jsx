@@ -212,7 +212,7 @@ export default function Dashboard() {
       const rs = await supabase
       .from("process")
       .select("id, reference_fuchs, reference_insurance, license_plate, insurance, order_date, execution_status")
-      .eq("execution_status", "WIP");
+      .in("execution_status", ["SENDED", "QUEUED", "WIP"]);
       console.log(rs);
       setProcess(rs.data);
     } else if (tab === "SUCCESS") {
