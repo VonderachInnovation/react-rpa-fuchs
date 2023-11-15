@@ -22,9 +22,7 @@ const Routing = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Example />}></Route>
-        <Route path="/app" element={<Example />}></Route>
-        <Route path="/test" element={	<Navigate to="/app" />}></Route>
+        <Route path="/" element={	<Navigate to="/dashboard" />}></Route>
         <Route path='/dashboard' element={ <Authentication><App /></Authentication>} />
       </Routes>
     </BrowserRouter>
